@@ -1,0 +1,94 @@
+$primary-color: #007BFF;
+$hover-color: #0056b3;
+$success-color: #28a745;
+$success-hover-color: #218838;
+$nav-background-color: rgba(184, 36, 36, 0.5);
+$white: #fff;
+
+body {
+  margin: 0;
+  color: $white;
+  font-family: sans-serif;
+  background-image: url('pics/1.jpg');
+  background-size: cover;
+}
+
+.timeContainer {
+  text-align: center;
+  margin-top: 50px;
+  position: relative;
+}
+
+.progress-ring {
+  position: relative;
+  display: inline-block;
+}
+
+.progress-ring__circle {
+  transition: stroke-dashoffset 0.35s;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+.timer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  color: white;
+}
+
+.timerButtons {
+  margin-top: 20px;
+
+  button {
+    font-size: 18px;
+    margin: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: $primary-color;
+    color: $white;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: $hover-color;
+    }
+  }
+}
+
+.audioContainer {
+  text-align: center;
+  margin-top: 20px;
+
+  button {
+    font-size: 18px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: $success-color;
+    color: $white;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: $success-hover-color;
+    }
+  }
+
+  .audioControl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+
+    i {
+      font-size: 24px;
+      margin-right: 10px;
+    }
+  }
+
+  .volumeControl {
+    width: 200px;
+  }
+}

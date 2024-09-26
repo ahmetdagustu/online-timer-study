@@ -10,6 +10,49 @@
 </head>
 
 <body>
-    <script type="module" src="script.js"></script>
+    <div class="timeContainer">
+        <div class="progress-ring">
+            <svg class="progress-ring__circle" width="200" height="200">
+                <circle class="progress-ring__circle" stroke="white" stroke-width="4" fill="transparent" r="90" cx="100" cy="100"/>
+            </svg>
+            <div class="timer" id="timer">00:00</div>
+        </div>
+        <div class="timerButtons">
+            <button onclick="startTimer(3600)">1 Saat</button>
+            <button onclick="startTimer(1500)">Pomodoro</button>
+        </div>
+    </div>
+    <div class="audioContainer">        
+        <button id="playButton"><i class="fas fa-play"></i></button>
+
+        <div class="audioControl" data-audio="audio1">
+            <i class="fas fa-dove fa-3x"></i>
+            <input type="range" min="0" max="1" step="0.01" value="0.5" class="volumeControl">
+        </div>
+
+        <div class="audioControl" data-audio="audio2">
+            <i class="fas fa-cloud-rain fa-3x"></i>
+            <input type="range" min="0" max="1" step="0.01" value="0" class="volumeControl">
+        </div>
+
+        <div class="audioControl" data-audio="audio3">
+            <i class="fas fa-fire fa-3x"></i>
+            <input type="range" min="0" max="1" step="0.01" value="0" class="volumeControl">
+        </div>
+        
+        <audio id="audio1" loop>
+            <source src="audio/bird.mp3" type="audio/mp3">
+            Tarayıcınız bu ses dosyasını desteklemiyor.
+        </audio>
+        <audio id="audio2" loop>
+            <source src="audio/rain.mp3" type="audio/mp3">
+            Tarayıcınız bu ses dosyasını desteklemiyor.
+        </audio>
+        <audio id="audio3" loop>
+            <source src="audio/fire.mp3" type="audio/mp3">
+            Tarayıcınız bu ses dosyasını desteklemiyor.
+        </audio>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
