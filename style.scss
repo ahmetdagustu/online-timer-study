@@ -1,45 +1,71 @@
-$primary-color: #007BFF;
-$hover-color: #0056b3;
-$success-color: #28a745;
-$success-hover-color: #218838;
-$nav-background-color: rgba(184, 36, 36, 0.5);
-$white: #fff;
+// ---------------------------
+// Renk Değişkenleri
+// ---------------------------
+$primary-blue: #007BFF; // İlerleme Çemberi Rengi
+$primary-blue-hover: #0056b3; // Buton Hover Rengi
+$primary-green: #28a745; // Ses Butonu Rengi
+$primary-green-hover: #218838; // Ses Butonu Hover Rengi
+$background-white: #ffffff; // Beyaz Çemberin Rengi
+$text-white: #fff; // Genel Metin Rengi
 
+// ---------------------------
+// Genel Stil Ayarları
+// ---------------------------
 body {
   margin: 0;
-  color: $white;
+  color: $text-white;
   font-family: sans-serif;
   background-image: url('pics/1.jpg');
   background-size: cover;
 }
 
-.timeContainer {
+// ---------------------------
+// Zamanlayıcı Bileşeni
+// ---------------------------
+.timer-wrapper {
   text-align: center;
   margin-top: 50px;
   position: relative;
 }
 
-.progress-ring {
+.circular-timer {
   position: relative;
   display: inline-block;
 }
 
-.progress-ring__circle {
+// Beyaz Sabit Çember (Arka Plan)
+.static-circle {
+  stroke: $background-white;
+  stroke-width: 8;
+  fill: transparent;
+}
+
+// Mavi İlerleme Çemberi
+.circular-progress {
+  stroke: $primary-blue; // Ana çember rengi
+  stroke-width: 8; // Çizgi kalınlığı
+  fill: transparent; // İç kısım boş olsun
+  stroke-dasharray: 565.48; // Çemberin toplam çevresi
+  stroke-dashoffset: 565.48; // Başlangıçta tamamı boş olsun
   transition: stroke-dashoffset 0.35s;
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
 }
 
-.timer {
+// Zamanı Gösterme Alanı
+.time-display {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 48px;
-  color: white;
+  color: $text-white;
 }
 
-.timerButtons {
+// ---------------------------
+// Zamanlayıcı Butonları
+// ---------------------------
+.timer-controls {
   margin-top: 20px;
 
   button {
@@ -48,17 +74,20 @@ body {
     padding: 10px 20px;
     cursor: pointer;
     border: none;
-    background-color: $primary-color;
-    color: $white;
+    background-color: $primary-blue;
+    color: $text-white;
     border-radius: 5px;
 
     &:hover {
-      background-color: $hover-color;
+      background-color: $primary-blue-hover;
     }
   }
 }
 
-.audioContainer {
+// ---------------------------
+// Ses Kontrol Bileşeni
+// ---------------------------
+.audio-wrapper {
   text-align: center;
   margin-top: 20px;
 
@@ -67,16 +96,17 @@ body {
     padding: 10px 20px;
     cursor: pointer;
     border: none;
-    background-color: $success-color;
-    color: $white;
+    background-color: $primary-green;
+    color: $text-white;
     border-radius: 5px;
 
     &:hover {
-      background-color: $success-hover-color;
+      background-color: $primary-green-hover;
     }
   }
 
-  .audioControl {
+  // Ses Kontrolü Yapısı
+  .audio-control {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -88,7 +118,8 @@ body {
     }
   }
 
-  .volumeControl {
+  // Ses Kaydırma Çubuğu
+  .volume-slider {
     width: 200px;
   }
 }
